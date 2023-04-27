@@ -17,7 +17,7 @@ namespace Ryerson_SquareChaser
         Rectangle player2 = new Rectangle(100, 250, 20, 20);
         Rectangle boundaries = new Rectangle(50, 40, 350, 330);
         Rectangle point = new Rectangle(200, 210, 10, 10);
-        Rectangle slow = new Rectangle(200, 210, 10, 10);
+        Rectangle slow = new Rectangle(200, 210, 15, 15);
 
 
         Pen whitePen = new Pen(Color.White, 8);
@@ -43,8 +43,8 @@ namespace Ryerson_SquareChaser
         int player2Speed = 4;
         int x, y;
 
-        int slowballspeedX = 2;
-        int slowballspeedY = 2;
+        int slowballspeedX = 6;
+        int slowballspeedY = -4;
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -122,8 +122,8 @@ namespace Ryerson_SquareChaser
         private void timertick_Tick(object sender, EventArgs e)
         {
             // move red squre
-            slow.X = slowballspeedX;
-            slow.Y = slowballspeedY;
+            slow.X += slowballspeedX;
+            slow.Y += slowballspeedY;
 
             Random randGen = new Random();
 
@@ -168,10 +168,18 @@ namespace Ryerson_SquareChaser
 
            //check if slow hit top or bottom wall and change direction if it does
 
-            if (slow.Y < 0 || slow.Y > this.Height - slow.Height)
+            if (slow.Y < 45 || slow.Y > 370 - slow.Height)
            {
              slowballspeedY *= -1;  
            }
+
+            // check to slow hit the side wall and chage direction
+
+            if(slow.X < 55 || slow.X > 395 - slow.Width)
+            {
+              slowballspeedX *= -1;
+            }
+
 
             // if the player reacts to the point
             if (player1.IntersectsWith(point))
@@ -256,7 +264,6 @@ namespace Ryerson_SquareChaser
             Refresh();
 
         }
-
         public Form1()
         {
             InitializeComponent();

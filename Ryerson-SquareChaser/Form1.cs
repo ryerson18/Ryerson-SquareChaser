@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace Ryerson_SquareChaser
 {
@@ -264,6 +265,19 @@ namespace Ryerson_SquareChaser
             Refresh();
 
         }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            //turn on timer
+            //disable the button
+            timertick.Enabled = true;
+            startButton.Enabled = false;
+            Thread.Sleep(1000);
+            
+
+
+        }
+
         public Form1()
         {
             InitializeComponent();

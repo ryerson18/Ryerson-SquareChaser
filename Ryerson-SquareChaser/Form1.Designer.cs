@@ -33,6 +33,7 @@
             this.p2ScoreLabel = new System.Windows.Forms.Label();
             this.timertick = new System.Windows.Forms.Timer(this.components);
             this.winLabel = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // p1ScoreLabel
@@ -59,7 +60,6 @@
             // 
             // timertick
             // 
-            this.timertick.Enabled = true;
             this.timertick.Interval = 20;
             this.timertick.Tick += new System.EventHandler(this.timertick_Tick);
             // 
@@ -73,12 +73,26 @@
             this.winLabel.TabIndex = 2;
             this.winLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // startButton
+            // 
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(172, 5);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 27);
+            this.startButton.TabIndex = 3;
+            this.startButton.Text = "Start";
+            this.startButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(442, 386);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.winLabel);
             this.Controls.Add(this.p2ScoreLabel);
             this.Controls.Add(this.p1ScoreLabel);
@@ -98,6 +112,7 @@
         private System.Windows.Forms.Label p2ScoreLabel;
         private System.Windows.Forms.Timer timertick;
         private System.Windows.Forms.Label winLabel;
+        private System.Windows.Forms.Button startButton;
     }
 }
 

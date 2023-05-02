@@ -42,10 +42,12 @@ namespace Ryerson_SquareChaser
         int player2Score = 0;
         int player1Speed = 4;
         int player2Speed = 4;
-        int x, y;
+        
 
         int slowballspeedX = 6;
         int slowballspeedY = -4;
+
+        
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -123,8 +125,10 @@ namespace Ryerson_SquareChaser
         private void timertick_Tick(object sender, EventArgs e)
         {
             // move red squre
-            slow.X += slowballspeedX;
-            slow.Y += slowballspeedY;
+            //slow.X += slowballspeedX;
+            //slow.Y += slowballspeedY;
+
+            
 
             Random randGen = new Random();
 
@@ -180,6 +184,9 @@ namespace Ryerson_SquareChaser
             {
               slowballspeedX *= -1;
             }
+
+           
+
 
 
             // if the player reacts to the point
